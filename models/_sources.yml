@@ -1,8 +1,11 @@
 version: 2
 
-#sources:
-#  - name:
-#    database:
-#    schema:
-#    tables:
-#      - name:
+sources:
+  - name: ecw
+    database: raw  
+    schema: ecw  
+    tables:
+      - name: diagnosis
+      - name: enc
+      - name: itemdetail
+      - name: problemlist
