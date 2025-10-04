@@ -5,7 +5,93 @@ sources:
     database: raw  
     schema: ecw  
     tables:
+
       - name: diagnosis
+        columns:
+          - name: EncounterId
+            description: Encounter identifier from the source diagnosis table
+          - name: ItemId
+            description: Item identifier (diagnosis code / concept id)
+          - name: displayIndex
+            description: Display ordering index for diagnoses
+          - name: PrimaryAsmt
+            description: Flag indicating primary assessment/diagnosis
+
+      - name: edi_facilities
+        columns:
+          - name: Id
+            description: Primary key of the facilities table
+            data_tests:
+              - unique
+              - not_null
+          - name: facility_name
+            description: Name of the facility
+
       - name: enc
+        columns:
+          - name: encounterID
+            description: Encounter identifier
+          - name: patientID
+            description: Patient identifier
+          - name: invoiceID
+            description: Invoice identifier
+          - name: facilityId
+            description: Facility identifier
+          - name: ResourceId
+            description: Resource identifier
+          - name: doctorID
+            description: Doctor identifier
+          - name: ClaimReq
+            description: Claim request flag/value
+          - name: date
+            description: Encounter date
+          - name: encType
+            description: Encounter type (e.g. 2 = telehealth)
+          - name: STATUS
+            description: Encounter status
+          - name: reason
+            description: Reason for visit
+          - name: VisitType
+            description: Visit type
+          - name: deleteFlag
+            description: Delete flag (0 = not deleted)
+          - name: startTime
+            description: Start time (HH:MM)
+          - name: endTime
+            description: End time (HH:MM)
+          - name: arrivedTime
+            description: Arrived time (HH:MM)
+          - name: depTime
+            description: Departure time (HH:MM)
+          - name: encLock
+            description: Encounter lock flag
+      
       - name: itemdetail
+        columns:
+          - name: itemID
+            description: Item identifier from the source itemdetail table
+          - name: value
+            description: Value associated with the item
+          - name: propID
+            description: Property identifier associated with the item
+      
       - name: problemlist
+        columns:
+          - name: patientId
+            description: Patient identifier
+            data_tests:
+              - not_null
+          - name: encounterId
+            description: Encounter identifier (may be null)
+          - name: AddedDate
+            description: Date the problem was added in the source
+          - name: onsetdate
+            description: Onset date of the problem
+          - name: resolvedon
+            description: Resolution date of the problem
+          - name: asmtId
+            description: Assessment identifier from the source
+            data_tests:
+              - not_null
+          - name: status
+            description: Derived status ('inactive', 'resolved', or 'active') based on inactiveFlag
