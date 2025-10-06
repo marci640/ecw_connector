@@ -1,4 +1,4 @@
-name: connector_template
+name: 'ecw_connector'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
@@ -9,7 +9,7 @@ vars:
   ## The Tuva Project vars
   ### Uncomment the line(s) based on the type of source data.
   #claims_enabled: true
-  #clinical_enabled: true
+  clinical_enabled: true
   #provider_attribution_enabled: true
 
   ## CMS HCC data mart vars
@@ -33,7 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 models:
-  connector_template:
+  ecw_connector:
     staging:
       +materialized: table
       +schema: _input_layer

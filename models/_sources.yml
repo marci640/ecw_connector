@@ -5,7 +5,144 @@ sources:
     database: raw  
     schema: ecw  
     tables:
+
       - name: diagnosis
+        columns:
+          - name: EncounterId
+            description: Encounter identifier from the source diagnosis table
+          - name: ItemId
+            description: Item identifier (diagnosis code / concept id)
+          - name: displayIndex
+            description: Display ordering index for diagnoses
+          - name: PrimaryAsmt
+            description: Flag indicating primary assessment/diagnosis
+
+      - name: edi_facilities
+        columns:
+          - name: Id
+            description: Primary key of the facilities table
+            data_tests:
+              - unique
+              - not_null
+          - name: facility_name
+            description: Name of the facility
+
+      - name: edi_icdcodes
+        columns:
+          - name: ItemId
+            description: Item identifier (links to itemdetail / diagnosis)
+          - name: source_code_type_1
+            description: Source code type derived from icd10flag ('icd-10-cm' or 'icd-9-cm')
+
       - name: enc
+        columns:
+          - name: encounterID
+            description: Encounter identifier
+          - name: patientID
+            description: Patient identifier
+          - name: invoiceID
+            description: Invoice identifier
+          - name: facilityId
+            description: Facility identifier
+          - name: ResourceId
+            description: Resource identifier
+          - name: doctorID
+            description: Doctor identifier
+          - name: ClaimReq
+            description: Claim request flag/value
+          - name: date
+            description: Encounter date
+          - name: encType
+            description: Encounter type (e.g. 2 = phone call, 5 = lab visit, etc.)
+          - name: STATUS
+            description: Encounter status
+          - name: reason
+            description: Reason for visit
+          - name: VisitType
+            description: Visit type
+          - name: deleteFlag
+            description: Delete flag (0 = not deleted)
+          - name: startTime
+            description: Start time (HH:MM)
+          - name: endTime
+            description: End time (HH:MM)
+          - name: arrivedTime
+            description: Arrived time (HH:MM)
+          - name: depTime
+            description: Departure time (HH:MM)
+          - name: encLock
+            description: Encounter lock flag
+
+      - name: icd
+        columns:
+          - name: Code
+            description: ICD code value (primary code field)
+          - name: ShortDesc
+            description: Short description for the ICD code
+          - name: LongDesc
+            description: Long/extended description for the ICD code
+          - name: source_code_type_2
+            description: Source code type derived from codetype ('icd-10-cm' or 'icd-9-cm')
+
       - name: itemdetail
+        columns:
+          - name: itemID
+            description: Item identifier from the source itemdetail table
+          - name: value
+            description: Value associated with the item
+          - name: propID
+            description: Property identifier associated with the item
+      
       - name: problemlist
+        columns:
+          - name: patientId
+            description: Patient identifier
+            data_tests:
+              - not_null
+          - name: encounterId
+            description: Encounter identifier (may be null)
+          - name: AddedDate
+            description: Date the problem was added in the source
+          - name: onsetdate
+            description: Onset date of the problem
+          - name: resolvedon
+            description: Resolution date of the problem
+          - name: asmtId
+            description: Assessment identifier from the source
+            data_tests:
+              - not_null
+          - name: status
+            description: Derived status ('inactive', 'resolved', or 'active') based on inactiveFlag
+
+      - name: users
+        columns:
+          - name: uid
+            description: User identifier (primary key) from the source users table
+          - name: ufname
+            description: User first name
+          - name: ulname
+            description: User last name
+          - name: uname
+            description: Display name (concatenation of last and first name, "Last, First")
+          - name: dob
+            description: Date of birth
+          - name: sex
+            description: Sex/gender at birth
+          - name: uemail
+            description: User email address
+          - name: umobileno
+            description: User mobile phone number
+          - name: upPhone
+            description: Alternate phone number
+          - name: upaddress
+            description: Primary address line 1
+          - name: upaddress2
+            description: Primary address line 2
+          - name: upcity
+            description: City of primary address
+          - name: upstate
+            description: State of primary address
+          - name: zipcode
+            description: ZIP/postal code
+          - name: UserType
+            description: User type / role
