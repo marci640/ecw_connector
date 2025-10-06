@@ -7,7 +7,7 @@ select
     doctorID,
     ClaimReq
     date,
-    encType, -- 2 is telehealth
+    encType,
     STATUS,
     reason,
     VisitType,

@@ -46,7 +46,7 @@ sources:
           - name: date
             description: Encounter date
           - name: encType
-            description: Encounter type (e.g. 2 = telehealth)
+            description: Encounter type (e.g. 2 = phone call, 5 = lab visit, etc.)
           - name: STATUS
             description: Encounter status
           - name: reason
@@ -95,3 +95,36 @@ sources:
               - not_null
           - name: status
             description: Derived status ('inactive', 'resolved', or 'active') based on inactiveFlag
+
+      - name: users
+        columns:
+          - name: uid
+            description: User identifier (primary key) from the source users table
+          - name: ufname
+            description: User first name
+          - name: ulname
+            description: User last name
+          - name: uname
+            description: Display name (concatenation of last and first name, "Last, First")
+          - name: dob
+            description: Date of birth
+          - name: sex
+            description: Sex/gender at birth
+          - name: uemail
+            description: User email address
+          - name: umobileno
+            description: User mobile phone number
+          - name: upPhone
+            description: Alternate phone number
+          - name: upaddress
+            description: Primary address line 1
+          - name: upaddress2
+            description: Primary address line 2
+          - name: upcity
+            description: City of primary address
+          - name: upstate
+            description: State of primary address
+          - name: zipcode
+            description: ZIP/postal code
+          - name: UserType
+            description: User type / role
