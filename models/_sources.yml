@@ -27,6 +27,13 @@ sources:
           - name: facility_name
             description: Name of the facility
 
+      - name: edi_icdcodes
+        columns:
+          - name: ItemId
+            description: Item identifier (links to itemdetail / diagnosis)
+          - name: source_code_type_1
+            description: Source code type derived from icd10flag ('icd-10-cm' or 'icd-9-cm')
+
       - name: enc
         columns:
           - name: encounterID
@@ -65,7 +72,18 @@ sources:
             description: Departure time (HH:MM)
           - name: encLock
             description: Encounter lock flag
-      
+
+      - name: icd
+        columns:
+          - name: Code
+            description: ICD code value (primary code field)
+          - name: ShortDesc
+            description: Short description for the ICD code
+          - name: LongDesc
+            description: Long/extended description for the ICD code
+          - name: source_code_type_2
+            description: Source code type derived from codetype ('icd-10-cm' or 'icd-9-cm')
+
       - name: itemdetail
         columns:
           - name: itemID
