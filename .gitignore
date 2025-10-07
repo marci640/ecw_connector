@@ -28,3 +28,4 @@ __pycache__/
 .python-version
 *.duckdb
 .user.yml
+dbt_internal_packages/

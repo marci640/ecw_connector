@@ -93,6 +93,9 @@ sources:
           - name: propID
             description: Property identifier associated with the item
       
+      - name: items
+      - name: labdata
+
       - name: problemlist
         columns:
           - name: patientId
