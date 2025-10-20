@@ -1,11 +1,11 @@
 select 
 	EncounterId,
 	ReportId,
-	CONVERT(varchar(10), cast(ResultDate as date), 101) AS ResultDate,
+	ResultDate,
 	result,
 	received,
 	status,
-	CONVERT(varchar(10), cast(ReviewedDate as date), 101) AS ReviewedDate,
+	ReviewedDate,
 	priority,
     ItemId,
     assignedToId,

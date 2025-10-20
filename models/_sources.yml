@@ -73,6 +73,19 @@ sources:
           - name: encLock
             description: Encounter lock flag
 
+      - name: hl7labdatadetail
+        columns:
+          - name: ReportId
+            description: Report identifier from the source hl7labdatadetail table
+          - name: name
+            description: Name of the lab data element
+          - name: value
+            description: Observed value/result for the lab element
+          - name: units
+            description: Units of measurement for the value
+          - name: range
+            description: Reference/normal range for the lab value
+
       - name: icd
         columns:
           - name: Code
@@ -94,7 +107,52 @@ sources:
             description: Property identifier associated with the item
       
       - name: items
+        columns:
+          - name: itemId
+            description: Item identifier from the source items table
+          - name: keyName
+            description: Key name of the item
+          - name: itemName
+            description: Name/description of the item 
+
       - name: labdata
+        columns:
+          - name: ReportId
+            description: Report identifier from the source labdata table
+          - name: EncounterId
+            description: Encounter identifier associated with the lab data
+          - name: ItemId
+            description: Item identifier associated with the lab data
+          - name: result
+            description: Result value of the lab data
+          - name: received
+            description: Date the lab data was received
+          - name: status
+            description: Status of the lab data
+          - name: ResultDate
+            description: Date the lab result was generated
+          - name: ReviewedDate
+            description: Date the lab result was reviewed
+          - name: priority
+            description: Priority level of the lab data
+          - name: assignedToId
+            description: Identifier of the user assigned to the lab data
+      - name: labdatadetail
+        columns:
+          - name: ReportId
+            description: Report identifier from the source labdatadetail table
+          - name: ItemId
+            description: Item identifier associated with the lab data detail
+          - name: value
+            description: Value of the lab data detail
+          - name: propId
+            description: Property identifier associated with the lab data detail
+      - name: labloinccodes
+        columns:
+          - name: itemid
+            description: Item identifier from the source labloinccodes table
+          - name: code
+            description: Code associated with the labloinccodes item
 
       - name: problemlist
         columns:
