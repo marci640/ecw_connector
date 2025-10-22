@@ -115,6 +115,8 @@ sources:
           - name: itemName
             description: Name/description of the item 
 
+      - name: labcptmap
+
       - name: labdata
         columns:
           - name: ReportId
@@ -137,6 +139,7 @@ sources:
             description: Priority level of the lab data
           - name: assignedToId
             description: Identifier of the user assigned to the lab data
+
       - name: labdatadetail
         columns:
           - name: ReportId
