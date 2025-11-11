@@ -1,0 +1,8 @@
+itemid,keyName,itemName
+1001,HEMOG,Complete Blood Count
+1002,BP,Blood Pressure Panel
+1003,GLU,Glucose
+1004,TSH,Thyroid Stimulating Hormone
+2001,HGB,Hemoglobin
+2002,BP_SYS,Systolic BP
+2003,TSH_VALUE,TSH Result

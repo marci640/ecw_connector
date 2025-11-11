@@ -1,0 +1,5 @@
+ReportId,ItemId,EncounterId,result,ResultDate,resultime,collDate,collTime,status,ordPhyId,assignedtoid,priority,received,reviewedby,revieweddate
+R5001,1001,E1001,7.1,2025-02-15,08:15:00,2025-02-15,07:45:00,final,D001,D001,normal,2025-02-15,D001,2025-02-15
+R5002,1002,E1002,120/80,2025-02-15,09:10:00,2025-02-15,08:55:00,final,D002,D002,normal,2025-02-15,D002,2025-02-15
+R5003,1003,E1001,5.4,2025-02-15,08:45:00,2025-02-15,08:00:00,final,D001,D001,normal,2025-02-15,D001,2025-02-15
+R6001,1004,E2010,,2025-02-16,14:30:00,2025-02-16,14:00:00,prelim,D003,D003,normal,2025-02-16,,

@@ -1,8 +1,6 @@
 select
     dob,
     sex,
-    ssn,
-    transgender,
     uemail,
     ufname,
     uid,
