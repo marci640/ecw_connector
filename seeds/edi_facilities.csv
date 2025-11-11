@@ -1,2 +1,3 @@
-Id,name
-F001,Main Clinic
+Id,name,NPI,BillingAddressLine1,BillingAddressLine2,BillingCity,BillingState,BillingZip
+F001,Main Clinic,NPI123,123 Billing St,,Springfield,CA,94105
+F002,Westside Clinic,NPI124,456 Billing Ave,Suite 100,Westside,CA,94106

@@ -26,6 +26,18 @@ sources:
               - not_null
           - name: name
             description: Facility name
+          - name: NPI
+            description: National Provider Identifier
+          - name: BillingAddressLine1
+            description: Billing address line 1
+          - name: BillingAddressLine2
+            description: Billing address line 2
+          - name: BillingCity
+            description: Billing city
+          - name: BillingState
+            description: Billing state
+          - name: BillingZip
+            description: Billing zip/postal code
 
       - name: edi_icdcodes
         columns:
