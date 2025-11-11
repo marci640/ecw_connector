@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: ecw
-    database: raw  
-    schema: ecw  
+    database: raw
+    schema: ecw
     tables:
 
       - name: diagnosis
@@ -24,15 +24,15 @@ sources:
             data_tests:
               - unique
               - not_null
-          - name: facility_name
-            description: Name of the facility
+          - name: name
+            description: Facility name
 
       - name: edi_icdcodes
         columns:
           - name: ItemId
             description: Item identifier (links to itemdetail / diagnosis)
-          - name: source_code_type_1
-            description: Source code type derived from icd10flag ('icd-10-cm' or 'icd-9-cm')
+          - name: icd10flag
+            description: Flag indicating ICD-10 mapping (1 = ICD-10)
 
       - name: enc
         columns:
@@ -63,13 +63,13 @@ sources:
           - name: deleteFlag
             description: Delete flag (0 = not deleted)
           - name: startTime
-            description: Start time (HH:MM)
+            description: Start time
           - name: endTime
-            description: End time (HH:MM)
+            description: End time
           - name: arrivedTime
-            description: Arrived time (HH:MM)
+            description: Arrived time
           - name: depTime
-            description: Departure time (HH:MM)
+            description: Departure time
           - name: encLock
             description: Encounter lock flag
 
@@ -94,8 +94,8 @@ sources:
             description: Short description for the ICD code
           - name: LongDesc
             description: Long/extended description for the ICD code
-          - name: source_code_type_2
-            description: Source code type derived from codetype ('icd-10-cm' or 'icd-9-cm')
+          - name: codetype
+            description: Source codetype as string ('9' or '10')
 
       - name: itemdetail
         columns:
@@ -105,7 +105,7 @@ sources:
             description: Value associated with the item
           - name: propID
             description: Property identifier associated with the item
-      
+
       - name: items
         columns:
           - name: itemId
@@ -113,7 +113,7 @@ sources:
           - name: keyName
             description: Key name of the item
           - name: itemName
-            description: Name/description of the item 
+            description: Name/description of the item
 
       - name: labcptmap
 
@@ -150,6 +150,7 @@ sources:
             description: Value of the lab data detail
           - name: propId
             description: Property identifier associated with the lab data detail
+
       - name: labloinccodes
         columns:
           - name: itemid
@@ -175,6 +176,12 @@ sources:
             description: Assessment identifier from the source
             data_tests:
               - not_null
+          - name: inactiveFlag
+            description: Derived inactive flag (1 = inactive/resolved, 0 = active)
+          - name: Resolved
+            description: Boolean/int resolved indicator
+          - name: deleteFlag
+            description: Delete flag from source
           - name: status
             description: Derived status ('inactive', 'resolved', or 'active') based on inactiveFlag
 
@@ -186,8 +193,6 @@ sources:
             description: User first name
           - name: ulname
             description: User last name
-          - name: uname
-            description: Display name (concatenation of last and first name, "Last, First")
           - name: dob
             description: Date of birth
           - name: sex

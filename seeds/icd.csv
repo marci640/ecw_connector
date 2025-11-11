@@ -1,0 +1,81 @@
+Code,ShortDesc,LongDesc,codetype
+A15,Tuberculosis,Tuberculosis of lung,10
+A16,Tuberculosis_other,Tuberculosis other,10
+A17,TB_spinal,Tuberculosis of spine,10
+A18,TB_other_sites,Tuberculosis of other organs,10
+A19,TB_unspecified,Unspecified tuberculosis,10
+A33,Tetanus_neonatorum,Tetanus neonatorum,10
+A50,Chlamydia_preg,Chlamydial infection in pregnancy,10
+A51,Chlamydia_other,Chlamydial infection,10
+A52,Chlamydia_various,Other chlamydial diseases,10
+A53,Syphilis,Syphilis,10
+A54,Gonorrhea,Gonococcal infection,10
+A55,Other_STI,Other sexually transmitted infections,10
+A56,STI_other,Other STI,10
+A57,STI_other2,Other STI 2,10
+A58,STI_other3,Other STI 3,10
+A59,STI_unspecified,Unspecified STI,10
+A60,Anogenital_infection,Anogenital infection,10
+A61,Anogenital_infection2,Anogenital infection 2,10
+A62,Infection_other,Other infection,10
+A63,STI_various,Various STIs,10
+A64,STI_unspecified2,STI unspecified 2,10
+A69.0,Trachoma_disease,Trachoma due to Chlamydia,10
+A69.1,Other_chlamydia,Other chlamydia conditions,10
+A69.8,Chlamydia_other2,Chlamydia other,10
+A69.9,Chlamydia_unspecified,Chlamydia unspecified,10
+B16.0,Acute_hepB_with_delta,Acute hepatitis B with delta-agent,10
+B16.1,Acute_hepB_other,Acute hepatitis B other,10
+B16.2,Acute_hepB_variant,Acute hepatitis B variant,10
+B16.9,Acute_hepB_unspecified,Acute hepatitis B unspecified,10
+B17.1,Other_viral_hep,Other viral hepatitis,10
+B18.0,Chronic_hepB,Chronic viral hepatitis B,10
+B18.1,Chronic_hepB_variant,Chronic hepatitis B variant,10
+B18.2,Chronic_hepC,Chronic viral hepatitis C,10
+B19.1,Other_viral_hepB,Other viral hepatitis B,10
+B19.2,Unspecified_viral_hep,Unspecified viral hepatitis,10
+B20,HIV,HIV disease,10
+B90,Sequelae_TB,Sequelae of tuberculosis,10
+B97.35,SARS_CoV2,SARS-CoV-2 as cause,10
+C50.01,Breast_central,Malignant neoplasm central portion of breast,10
+C50.11,Breast_upper_inner,Malignant neoplasm upper-inner quadrant of breast,10
+C50.21,Breast_lower_inner,Malignant neoplasm lower-inner quadrant of breast,10
+C50.31,Breast_upper_outer,Malignant neoplasm upper-outer quadrant of breast,10
+C50.41,Breast_lower_outer,Malignant neoplasm lower-outer quadrant of breast,10
+C50.51,Breast_axillary_tail,Malignant neoplasm axillary tail,10
+C50.61,Breast_overlap,Malignant neoplasm overlapping sites,10
+C50.81,Breast_other,Malignant neoplasm other part of breast,10
+C50.91,Breast_unspecified,Malignant neoplasm unspecified,10
+C53,Malig_cervix,Malignant neoplasm of cervix uteri,10
+C79.81,Secondary_breast,Secondary malignant neoplasm of breast,10
+C79.82,Secondary_other,Secondary malignant neoplasm other,10
+D05,Carcinoma_in_situ,Carcinoma in situ of breast,10
+D06,Carcinoma_in_situ_cervix,Carcinoma in situ of cervix,10
+D24,Benign_breast,Benign neoplasm of breast,10
+D48.6,Neoplasm_other,Neoplasm of uncertain behavior,10
+D49.3,Neoplasm_unspecified,Unspecified neoplasm,10
+E08,Diabetes_due_to_other,Diabetes due to underlying condition,10
+E09,Drug_induced_diabetes,Drug-induced diabetes,10
+E10,Type1Diabetes,Type 1 diabetes mellitus,10
+E11,Type2Diabetes,Type 2 diabetes mellitus,10
+E12,Malnutrition_related_diabetes,Malnutrition-related diabetes,10
+E13,Other_specified_diabetes,Other specified diabetes,10
+E40,Severe_malnutrition,Severe protein-energy malnutrition,10
+E41,Moderate_malnutrition,Moderate protein-energy malnutrition,10
+E42,Severe_malnutrition2,Severe protein-energy malnutrition unspecified,10
+E43,Unspecified_malnutrition,Unspecified severe malnutrition,10
+E44,Moderate_malnutrition2,Moderate malnutrition other,10
+E45,Other_malnutrition,Other protein-energy malnutrition,10
+E46,Severe_malnutrition3,Severe malnutrition unspecified,10
+E50,Vitamin_deficiency,Vitamin deficiency,10
+E51,Mineral_deficiency,Mineral deficiency,10
+E52,Nutritional_deficiency,Nutritional deficiency,10
+E53,Other_nutritional_disorder,Other nutritional disorders,10
+E54,Mineral_disorder2,Disorders of mineral metabolism,10
+E55,Vitamin_D_def,Vitamin D deficiency,10
+E56,Other_vitamin_def,Other vitamin deficiencies,10
+E58,Mineral_deficiency_other,Other mineral deficiency,10
+E59,Multiple_nutritional_def,Multiple nutritional deficiencies,10
+E60,Selenium_deficiency,Selenium deficiency,10
+E61,Zinc_deficiency,Zinc deficiency,10
+E63,Other_nutrition_disorder,Other nutritional disorders,10
