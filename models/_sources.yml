@@ -170,6 +170,31 @@ sources:
           - name: code
             description: Code associated with the labloinccodes item
 
+      - name: rxhub_scriptlog
+        columns:
+          - name: ID
+            description: Primary key for the prescription record
+          - name: PatientId
+            description: Patient identifier
+          - name: EncounterId
+            description: Encounter identifier
+          - name: ScriptDate
+            description: Date the prescription was created
+          - name: ndccode
+            description: NDC code for the medication
+          - name: DrugName
+            description: Drug name / description
+          - name: Route
+            description: Administration route (e.g., Oral, Inhalation)
+          - name: doctorId
+            description: Prescribing provider identifier
+          - name: Quantity
+            description: Quantity prescribed
+          - name: Duration
+            description: Duration/days supply of the prescription
+          - name: Pt_LName
+            description: Patient last name
+
       - name: problemlist
         columns:
           - name: patientId
