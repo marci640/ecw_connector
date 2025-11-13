@@ -16,7 +16,7 @@ select
     , cast(null as {{ dbt.type_string() }}) as atc_description
     , cast(Route as {{ dbt.type_string() }}) as route
     , cast(null as {{ dbt.type_string() }}) as strength
-    , TRY_CAST(Quantity as {{ dbt.type_int() }}) as quantity
+    , try_cast(Quantity as {{ dbt.type_int() }}) as quantity
     , cast(null as {{ dbt.type_string() }}) as quantity_unit
     , cast(null as {{ dbt.type_int() }}) as days_supply
     , cast(doctorId as {{ dbt.type_string() }}) as practitioner_id

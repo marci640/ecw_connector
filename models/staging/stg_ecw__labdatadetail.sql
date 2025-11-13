@@ -1,6 +1,6 @@
 select
-    reportid,
-    propId,
-    Value
+    reportid
+  , propId
+  , Value
 from
     {{ source('ecw','labdatadetail') }}

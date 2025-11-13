@@ -1,6 +1,6 @@
 select 
-    itemId,
-    keyName,
-    itemName,
+    itemId
+  , keyName
+  , itemName
 from
     {{ source('ecw','items') }}	

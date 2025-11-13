@@ -1,5 +1,5 @@
 select 
-    itemid,
-    code
+    itemid
+  , code
 from
     {{ source('ecw','labloinccodes') }}	
