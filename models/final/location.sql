@@ -3,11 +3,11 @@ select
       fac.NPI as npi,
       fac.name as name,
       fac.PracticeType as facility_type,
-      fac.PayableTo as parent_organization
+      fac.PayableTo as parent_organization,
       (COALESCE(fac.AddressLine1,'') || ' ' || COALESCE(fac.AddressLine2,'')) as address,
       fac.City as city,
       fac.State as state,
-      fac.Zip as zip_code
+      fac.Zip as zip_code,
       cast(null as {{ dbt.type_float() }}) as latitude,
       cast(null as {{ dbt.type_float() }}) as longitude,
       cast('ecw'  as {{ dbt.type_string() }} ) as data_source,
