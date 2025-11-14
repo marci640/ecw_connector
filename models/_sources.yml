@@ -400,3 +400,113 @@ sources:
           - name: UserType
             description: User type / role
             data_type: string
+
+      - name: vitals
+        columns:
+          - name: encounterID
+            description: Encounter identifier
+            data_type: integer
+          - name: vitalID
+            description: Vital record identifier
+            data_type: integer
+          - name: propID
+            description: Property identifier for the vital
+            data_type: integer
+          - name: value
+            description: Vital value (string)
+            data_type: string
+          - name: Id
+            description: Internal id
+            data_type: integer
+          - name: UpdatedBy
+            description: User id who last updated the record
+            data_type: integer
+          - name: UpdatedTime
+            description: Last update timestamp
+            data_type: timestamp
+            nullable: true
+
+      - name: vitalrange
+        columns:
+          - name: itemid
+            description: Item identifier for the vital range
+            data_type: integer
+          - name: lowRange
+            description: Lower reference range (string)
+            data_type: string
+            max_len: 20
+          - name: highRange
+            description: Upper reference range (string)
+            data_type: string
+            max_len: 20
+          - name: groupId
+            description: Group identifier for related ranges
+            data_type: smallint
+          - name: invalidLow
+            description: Invalid-low marker/value (string)
+            data_type: string
+            max_len: 20
+          - name: invalidHigh
+            description: Invalid-high marker/value (string)
+            data_type: string
+            max_len: 20
+          - name: vitaltype
+            description: Vital type (e.g., BP, Ht, Wt, BMI)
+            data_type: string
+            max_len: 20
+            nullable: true
+          - name: vital_low
+            description: Normal low numeric value
+            data_type: decimal
+            nullable: true
+          - name: vital_high
+            description: Normal high numeric value
+            data_type: decimal
+            nullable: true
+
+      - name: loinccodes
+        columns:
+          - name: id
+            description: primary key for loinc codes
+            data_type: integer
+          - name: itemid
+            description: item identifier the loinc code maps to
+            data_type: integer
+          - name: CODE
+            description: loinc code value
+            data_type: string
+            max_len: 20
+          - name: UpdatedBy
+            description: user id who last updated the record
+            data_type: integer
+          - name: UpdatedTime
+            description: last update timestamp
+            data_type: timestamp
+            nullable: true
+          - name: LoincType
+            description: loinc type/flag (single char)
+            data_type: string
+            max_len: 1
+          - name: deleteflag
+            description: delete flag (0 = active)
+            data_type: integer
+
+      - name: vitaltypes
+        columns:
+          - name: itemId
+            description: Item identifier for the vital type
+            data_type: integer
+          - name: type
+            description: Vital type code (e.g., BP, Ht, Wt, BMI)
+            data_type: string
+            max_len: 20
+          - name: Id
+            description: Primary key for the vitaltypes table
+            data_type: integer
+          - name: mandatory
+            description: Flag indicating whether the vital is mandatory (0/1)
+            data_type: integer
+          - name: displayUom
+            description: Display unit-of-measure code
+            data_type: integer
+            nullable: true

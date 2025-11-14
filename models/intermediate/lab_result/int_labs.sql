@@ -51,4 +51,4 @@ from
   left join {{ ref('stg_ecw__labloinccodes') }} labloinc_comp
     on labloinc_comp.itemid = labdatadetail.PropId
 where
-  (labdata.result != '' OR labdatadetail.Value IS NOT NULL)
+  (labdata.result != '' or labdatadetail.Value is not null)
