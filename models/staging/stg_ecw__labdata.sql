@@ -1,15 +1,21 @@
 select
-    EncounterId
-  , ReportId
-  , ResultDate
+    ReportId
+  , EncounterId
+  , ItemId
   , result
   , received
   , status
+  , ResultDate
+  , collDate
+  , collTime
+  , resultime
   , ReviewedDate
-  , priority
-  , ItemId
-  , assignedToId
   , ReviewedBy
+  , ordPhyId
+  , priority
+  , assignedToId
+  , deleteFlag
+  , cancelled
 from
     {{ source('ecw','labdata') }}
 where

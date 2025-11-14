@@ -1,5 +1,6 @@
 select
     ReportId
+  , hl7itemid
   , name
   , value
   , units

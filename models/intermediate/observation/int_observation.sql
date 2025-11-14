@@ -27,10 +27,10 @@ from
     left join {{ ref('stg_ecw__vitaltypes') }} vitaltypes
         on vitaltypes.itemId = vitals.vitalID
     left join {{ ref('stg_ecw__items') }} items
-        on items.itemId = vitaltypes.vitalID
+        on items.itemId = vitaltypes.itemId
     left join {{ ref('stg_ecw__enc') }} enc
         on enc.encounterID = vitals.encounterID
     left join {{ ref('stg_ecw__loinccodes') }} loinc
         on loinc.itemid = items.itemId
     left join {{ ref('stg_ecw__vitalrange') }} vitalrange
-        on vitalrange.vitalTypeId = vitaltypes.itemId;
+        on vitalrange.itemid = vitaltypes.itemId;

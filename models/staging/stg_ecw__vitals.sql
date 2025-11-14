@@ -6,6 +6,5 @@ select
   , Id
   , UpdatedBy
   , UpdatedTime
-  , defaultValue
 from
     {{ source('ecw','vitals') }}

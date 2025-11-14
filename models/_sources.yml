@@ -228,8 +228,8 @@ sources:
             description: Result value of the lab data
             data_type: string
           - name: received
-            description: Date the lab data was received
-            data_type: timestamp
+            description: Boolean/int received indicator
+            data_type: integer
           - name: status
             description: Status of the lab data
             data_type: string
@@ -245,9 +245,15 @@ sources:
           - name: resultime
             description: Result time
             data_type: string
+          - name: ordPhyId
+            description: Ordering physician id (referenced by int_labs.sql)
+            data_type: string
           - name: ReviewedDate
             description: Date the lab result was reviewed
             data_type: timestamp
+          - name: ReviewedBy
+            description: User who reviewed the lab result
+            data_type: string
           - name: priority
             description: Priority level of the lab data
             data_type: string
@@ -405,7 +411,7 @@ sources:
         columns:
           - name: encounterID
             description: Encounter identifier
-            data_type: integer
+            data_type: string
           - name: vitalID
             description: Vital record identifier
             data_type: integer
