@@ -18,8 +18,18 @@ select
   , cast(null as {{ dbt.type_string() }}) as normalized_component_description
   , cast(labdata.status as {{ dbt.type_string() }}) as status
   , cast(coalesce(labdatadetail.Value, labdata.result) as {{ dbt.type_string() }}) as result
-  , cast(cast(labdata.ResultDate as datetime) + cast(labdata.resultime as time) as {{ dbt.type_timestamp() }}) as result_datetime
-  , cast(cast(labdata.collDate as datetime) + cast(labdata.collTime as time) as {{ dbt.type_timestamp() }}) as collection_datetime
+  , cast(
+      try_convert(
+        datetime2,
+        concat(convert(varchar(10), labdata.ResultDate, 23), ' ', labdata.resultime)
+      )
+    as {{ dbt.type_timestamp() }}) as result_datetime
+  , cast(
+      try_convert(
+        datetime2,
+        concat(convert(varchar(10), labdata.collDate, 23), ' ', labdata.collTime)
+      )
+    as {{ dbt.type_timestamp() }}) as collection_datetime
   , cast(null as {{ dbt.type_string() }}) as source_units
   , cast(null as {{ dbt.type_string() }}) as normalized_units
   , cast(null as {{ dbt.type_string() }}) as source_reference_range_low
@@ -51,4 +61,4 @@ from
   left join {{ ref('stg_ecw__labloinccodes') }} labloinc_comp
     on labloinc_comp.itemid = labdatadetail.PropId
 where
-  (labdata.result != '' OR labdatadetail.Value IS NOT NULL)
+  (labdata.result != '' or labdatadetail.Value is not null)

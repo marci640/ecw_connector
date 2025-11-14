@@ -1,0 +1,4 @@
+itemId,type,Id,mandatory,displayUom
+1005,Ht,1,'in',
+1006,Wt,2,'lbs',
+1007,BMI,3,'kg/m2',

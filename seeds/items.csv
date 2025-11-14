@@ -6,3 +6,6 @@ itemId,keyName,itemName
 2001,HGB,Hemoglobin
 2002,BP_SYS,Systolic BP
 2003,TSH_VALUE,TSH Result
+1005,HT,Height
+1006,WT,Weight
+1007,BMI,Body Mass Index
