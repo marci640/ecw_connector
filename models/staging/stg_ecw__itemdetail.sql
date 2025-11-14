@@ -1,6 +1,6 @@
 select
-    itemID,
-    value,
-    propID
+    itemID
+  , value
+  , propID
 from
     {{ source('ecw','itemdetail') }}
