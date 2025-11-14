@@ -15,7 +15,7 @@ select
     , cast(usersProviders.uid as {{ dbt.type_string() }}) as attending_provider_id -- TODO: going with resourceID, other clinics may use doctorID - confirm
     , cast(usersProviders.uname as {{ dbt.type_string() }}) as attending_provider_name
     , cast(facility.Id as {{ dbt.type_string() }}) as facility_id
-    , cast(facility.facility_name as {{ dbt.type_string() }}) as facility_name
+    , cast(facility.name as {{ dbt.type_string() }}) as facility_name
     , cast(null as {{ dbt.type_string() }}) as primary_diagnosis_code_type
     , cast(null as {{ dbt.type_string() }}) as primary_diagnosis_code
     , cast(null as {{ dbt.type_string() }}) as primary_diagnosis_description

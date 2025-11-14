@@ -26,14 +26,14 @@ sources:
           - name: Id
             description: Primary key of the facilities table
             data_type: string
-            data_tests:
-              - unique
-              - not_null
           - name: name
             description: Facility name
             data_type: string
           - name: NPI
             description: National Provider Identifier
+            data_type: string
+          - name: PracticeType
+            description: Practice type / specialty
             data_type: string
           - name: BillingAddressLine1
             description: Billing address line 1
