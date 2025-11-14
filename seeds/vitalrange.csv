@@ -1,0 +1,4 @@
+itemid,lowRange,highRange,groupId,invalidLow,invalidHigh,vitaltype,vital_low,vital_high
+1005,20,84,1,NA,NA,Ht,20,84
+1006,2,700,1,NA,NA,Wt,2,700
+1007,10,60,1,NA,NA,BMI,10,60

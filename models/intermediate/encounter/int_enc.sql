@@ -30,6 +30,7 @@ select
     , cast(null as {{ dbt.type_timestamp() }}) as ingest_datetime
 from
     {{ ref('stg_ecw__enc') }} enc
+    -- filter for CHK appointments only? completed encounters
   inner join {{ ref('stg_ecw__users') }} usersProviders
     on usersProviders.uid = enc.ResourceId
   inner join {{ ref('stg_ecw__edi_facilities') }} facility

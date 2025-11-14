@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: ecw
-    database: raw
-    schema: ecw
+    database: ecw_data
+    schema: dbo
     tables:
 
       - name: diagnosis
