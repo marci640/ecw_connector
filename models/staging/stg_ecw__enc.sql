@@ -12,7 +12,6 @@ select
   , reason
   , VisitType
   , deleteFlag
-  , cancelled
   , convert(varchar(5), enc.startTime, 108) as startTime
   , convert(varchar(5), enc.endTime, 108) as endTime
   , convert(varchar(5), enc.arrivedTime, 108) as arrivedTime
