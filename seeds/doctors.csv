@@ -1,0 +1,4 @@
+doctorID,PrintName,providerCode,NPI,speciality,SpecialityCode,FacilityId,TakeNewAppts,defaultstate,LicenseKey,TaxID,deaNo,FaxNo,TaxIDType,TaxIDSuffix
+D001,Alice Moran,D001,1720188448,General Practice,GP,F001,1,CA,LIC-A,TID001,DEA12345,(555)111-0001,EIN,001
+D002,Ben Carter,D002,1821039694,Internal Medicine,IM,F001,1,CA,LIC-B,TID002,DEA23456,(555)111-0002,EIN,002
+D003,Carol Ng,D003,1447261907,Pediatrics,PD,F001,1,CA,LIC-C,TID003,DEA34567,(555)111-0003,EIN,003

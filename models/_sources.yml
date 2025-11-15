@@ -516,3 +516,68 @@ sources:
             description: Display unit-of-measure code
             data_type: integer
             nullable: true
+
+      - name: doctors
+        columns:
+          - name: doctorID
+            description: Primary key / unique identifier for the doctor
+            data_type: string
+            nullable: false
+          - name: deaNo
+            description: Drug Enforcement Administration (DEA) registration number
+            data_type: string
+            max_len: 25
+            nullable: true
+          - name: FaxNo
+            description: Provider fax number
+            data_type: string
+            max_len: 25
+            nullable: true
+          - name: speciality
+            description: Provider specialty / discipline name
+            data_type: string
+            max_len: 60
+            nullable: false
+          - name: SpecialityCode
+            description: Short code representing provider specialty
+            data_type: string
+            max_len: 3
+            nullable: false
+          - name: PrintName
+            description: Formatted name for printing on documents
+            data_type: string
+            max_len: 255
+            nullable: false
+          - name: providerCode
+            description: Internal provider code used by the system
+            data_type: string
+            max_len: 10
+            nullable: false
+          - name: LicenseKey
+            description: License/key text field (freeform)
+            data_type: text
+            nullable: false
+          - name: TaxID
+            description: Provider tax identification number
+            data_type: string
+            max_len: 30
+            nullable: false
+          - name: TaxIDType
+            description: Type/format of the TaxID (e.g., EIN/SSN)
+            data_type: string
+            max_len: 30
+            nullable: false
+          - name: TaxIDSuffix
+            description: Optional TaxID suffix
+            data_type: string
+            max_len: 30
+            nullable: false
+          - name: FacilityId
+            description: Associated facility identifier
+            data_type: string
+            nullable: false
+          - name: NPI
+            description: National Provider Identifier
+            data_type: string
+            max_len: 30
+            nullable: false
