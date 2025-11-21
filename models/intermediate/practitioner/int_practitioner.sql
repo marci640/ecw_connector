@@ -12,6 +12,4 @@ select
 
 from {{ ref('stg_ecw__doctors') }} doctors
     inner join {{ ref('stg_ecw__users')  }} usersProviders
-    on doctors.doctorID = usersProviders.userID
-where usersProviders.delFlag != 1
-
+    on doctors.doctorID = usersProviders.uid
