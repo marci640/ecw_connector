@@ -4,7 +4,7 @@ select
     , cast(usersProviders.ufname as {{ dbt.type_string() }}) as first_name
     , cast(usersProviders.ulname as {{ dbt.type_string() }}) as last_name
     , cast(null as {{ dbt.type_string() }}) as practice_affiliation
-    , cast(usersProviders.speciality as {{ dbt.type_string() }}) as specialty
+    , cast(doctors.speciality as {{ dbt.type_string() }}) as specialty
     , cast(null as {{ dbt.type_string() }}) as sub_specialty
     , cast('ecw' as {{ dbt.type_string() }}) as data_source
     , cast(null as {{ dbt.type_string() }}) as file_name
