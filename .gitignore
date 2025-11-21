@@ -29,3 +29,5 @@ __pycache__/
 *.duckdb
 .user.yml
 dbt_internal_packages/
+.specstory/
+.env
