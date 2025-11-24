@@ -60,5 +60,3 @@ left join {{ ref('stg_ecw__labloinccodes') }} labloinc_order_hl7
   on labloinc_order_hl7.itemid = labdata.ItemId
 left join {{ ref('stg_ecw__labloinccodes') }} labloinc_comp_hl7
   on labloinc_comp_hl7.itemid = hl7.hl7itemid
-where
-  hl7.value != 'TNP';

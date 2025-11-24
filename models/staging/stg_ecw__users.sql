@@ -5,13 +5,16 @@ select
   , ufname
   , uid
   , ulname
-  , concat(coalesce(ulname, ''), ', ', coalesce(ufname, '')) as uname
+  , uminitial
+  , uname
+  , suffix
   , umobileno
   , upaddress
   , upaddress2
   , upcity
   , upPhone
   , upstate
+  , county
   , UserType
   , zipcode
 from

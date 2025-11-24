@@ -31,3 +31,6 @@ __pycache__/
 dbt_internal_packages/
 .specstory/
 .env
+ecw_connector/
+*.pyc
+*.pyo
