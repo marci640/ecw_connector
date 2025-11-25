@@ -11,4 +11,4 @@ select
   , race
   , PtStatus
   , ethnicity
-from {{ source('ecw','patients') }};
+from {{ source('ecw','patients') }}

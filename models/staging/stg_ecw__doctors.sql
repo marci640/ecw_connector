@@ -12,4 +12,4 @@ select
     TaxIDSuffix,
     FacilityId,
     NPI
-from {{ source('ecw', 'doctors') }};
+from {{ source('ecw', 'doctors') }}

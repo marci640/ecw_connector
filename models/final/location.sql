@@ -14,4 +14,4 @@ select
     , cast(null as {{ dbt.type_string() }}) as file_name
     , cast(null as {{ dbt.type_timestamp() }}) as ingest_datetime
 from
-    {{ ref('stg_ecw__edi_facilities') }};
+    {{ ref('stg_ecw__edi_facilities') }}

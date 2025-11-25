@@ -1,2 +1,6 @@
-select *
-from {{ source('ecw','ethnicity') }};
+select 
+    EthId
+    , Code
+    , Name
+
+from {{ source('ecw','ethnicity') }}
