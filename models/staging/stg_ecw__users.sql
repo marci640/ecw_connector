@@ -1,3 +1,17 @@
+with base as (
+  select
+  {% for column in adapter.get_columns_in_relation(source('ecw','users')) %}
+    cast(
+      nullif(
+        trim(
+          cast({{ column.name }} as {{ dbt.type_string() }})
+        ), ''
+      ) as {{ dbt.type_string() }}
+    ) as {{ column.name }}{% if not loop.last %},{% endif %}
+  {% endfor %}
+  from {{ source('ecw','users') }}
+)
+
 select
     dob
   , sex
@@ -5,17 +19,12 @@ select
   , ufname
   , uid
   , ulname
-  , uminitial
-  , uname
-  , suffix
   , umobileno
   , upaddress
   , upaddress2
   , upcity
   , upPhone
   , upstate
-  , county
   , UserType
   , zipcode
-from
-    {{ source('ecw','users') }}
+from base

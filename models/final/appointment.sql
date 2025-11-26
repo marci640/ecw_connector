@@ -63,4 +63,4 @@ from
     inner join {{ ref('stg_ecw__doctors') }} doctors
         on enc.resourceID = doctors.doctorID
     left join {{ ref('int_enc_diagnosis') }} diagnosis
-        on diagnosis.encounter_id = enc.encounterID and diagnosis.condition_rank = 1;
+        on diagnosis.encounter_id = enc.encounterID and diagnosis.condition_rank = 1

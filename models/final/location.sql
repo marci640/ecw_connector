@@ -4,7 +4,7 @@ select
     , cast(name as {{ dbt.type_string() }}) as name
     , cast(PracticeType as {{ dbt.type_string() }}) as facility_type
     , cast(PayableTo as {{ dbt.type_string() }}) as parent_organization
-    , cast(coalesce(AddressLine1, '') + ' ' + coalesce(AddressLine2, '') as {{ dbt.type_string() }}) as address
+    , cast(AddressLine1 as {{ dbt.type_string() }}) as address
     , cast(City as {{ dbt.type_string() }}) as city
     , cast(State as {{ dbt.type_string() }}) as state
     , cast(Zip as {{ dbt.type_string() }}) as zip_code

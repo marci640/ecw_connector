@@ -48,4 +48,4 @@ select
   , file_name
   , ingest_datetime
 from ranked
-where _rn = 1;
+where _rn = 1

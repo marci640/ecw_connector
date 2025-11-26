@@ -122,8 +122,8 @@ sources:
             description: Claim request flag/value
             data_type: string
           - name: date
-            description: Encounter date/time
-            data_type: timestamp
+            description: Encounter date
+            data_type: date
           - name: encType
             description: Encounter type code
             data_type: integer
@@ -408,14 +408,8 @@ sources:
 
       - name: users
         columns:
-          - name: uid
-            description: User identifier (primary key) from the source users table
-            data_type: string
-          - name: ufname
-            description: User first name
-            data_type: string
-          - name: ulname
-            description: User last name
+          - name: county
+            description: County of primary address
             data_type: string
           - name: dob
             description: Date of birth
@@ -426,11 +420,23 @@ sources:
           - name: uemail
             description: User email address
             data_type: string
+          - name: ufname
+            description: User first name
+            data_type: string
+          - name: uid
+            description: User identifier (primary key) from the source users table
+            data_type: string
+          - name: ulname
+            description: User last name
+            data_type: string
+          - name: uname
+            description: Username full name
+            data_type: string
+          - name: uminitial
+            description: User middle initial
+            data_type: string
           - name: umobileno
             description: User mobile phone number
-            data_type: string
-          - name: upPhone
-            description: Alternate phone number
             data_type: string
           - name: upaddress
             description: Primary address line 1
@@ -441,14 +447,17 @@ sources:
           - name: upcity
             description: City of primary address
             data_type: string
+          - name: upPhone
+            description: Alternate phone number
+            data_type: string
           - name: upstate
             description: State of primary address
             data_type: string
-          - name: zipcode
-            description: ZIP/postal code
-            data_type: string
           - name: UserType
             description: User type / role
+            data_type: string
+          - name: zipcode
+            description: ZIP/postal code
             data_type: string
 
       - name: vitals

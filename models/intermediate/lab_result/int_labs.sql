@@ -18,18 +18,8 @@ select
   , cast(null as {{ dbt.type_string() }}) as normalized_component_description
   , cast(labdata.status as {{ dbt.type_string() }}) as status
   , cast(coalesce(labdatadetail.Value, labdata.result) as {{ dbt.type_string() }}) as result
-  , cast(
-      try_convert(
-        datetime2,
-        concat(convert(varchar(10), labdata.ResultDate, 23), ' ', labdata.resultime)
-      )
-    as {{ dbt.type_timestamp() }}) as result_datetime
-  , cast(
-      try_convert(
-        datetime2,
-        concat(convert(varchar(10), labdata.collDate, 23), ' ', labdata.collTime)
-      )
-    as {{ dbt.type_timestamp() }}) as collection_datetime
+  , cast(concat(labdata.ResultDate, ' ', labdata.resultime) as {{ dbt.type_timestamp() }}) as result_datetime
+  , cast(concat(labdata.collDate, ' ', labdata.collTime) as {{ dbt.type_timestamp() }}) as collection_datetime
   , cast(null as {{ dbt.type_string() }}) as source_units
   , cast(null as {{ dbt.type_string() }}) as normalized_units
   , cast(null as {{ dbt.type_string() }}) as source_reference_range_low
