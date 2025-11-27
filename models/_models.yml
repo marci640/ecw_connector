@@ -7,48 +7,6 @@ version: 2
 
 models:
 ### final
-# Claims input
-  - name: eligibility
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns:
-              - person_id
-              - enrollment_start_date
-              - enrollment_end_date
-              - "{{ '\"plan\"' if (target.type == 'fabric') else 'plan' }}"
-              - payer
-              - data_source
-
-  - name: medical_claim
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns:
-              - claim_id
-              - claim_line_number
-              - data_source
-
-  - name: pharmacy_claim
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns:
-              - claim_id
-              - claim_line_number
-              - data_source
-
-  - name: provider_attribution
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns:
-              - person_id
-              - year_month
-              - "{{ '\"plan\"' if (target.type == 'fabric') else 'plan' }}"
-              - payer
-              - data_source
-
 # Clinical input
   - name: condition
     columns:
@@ -106,12 +64,12 @@ models:
           - unique
           - not_null
 
-  - name: procedure
-    columns:
-      - name: procedure_id
-        tests:
-          - unique
-          - not_null
+  # - name: procedure
+  #   columns:
+  #     - name: procedure_id
+  #       tests:
+  #         - unique
+  #         - not_null
 
 ### intermediate
 

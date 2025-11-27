@@ -18,24 +18,16 @@ select
 , cast(null as {{ dbt.type_string() }}) as normalized_component_description
 , cast(labdata.status as {{ dbt.type_string() }}) as status
 , cast(coalesce(hl7.value, labdata.result) as {{ dbt.type_string() }}) as result
-  , cast(
-      try_convert(
-        datetime2,
-        concat(convert(varchar(10), labdata.ResultDate, 23), ' ', labdata.resultime)
-      )
-    as {{ dbt.type_timestamp() }}) as result_datetime
-  , cast(
-      try_convert(
-        datetime2,
-        concat(convert(varchar(10), labdata.collDate, 23), ' ', labdata.collTime)
-      )
-    as {{ dbt.type_timestamp() }}) as collection_datetime
---, cast(cast(labdata.ResultDate as datetime) + cast(labdata.resultime as time) as {{ dbt.type_timestamp() }}) as result_datetime
---, cast(cast(labdata.collDate as datetime) + cast(labdata.collTime as time) as {{ dbt.type_timestamp() }}) as collection_datetime
+, cast(labdata.ResultDate as date) as result_datetime
+, cast(labdata.collDate as date) as collection_datetime
 , cast(hl7.units as {{ dbt.type_string() }}) as source_units
 , cast(null as {{ dbt.type_string() }}) as normalized_units
-, cast(substring(hl7.range, 1, charindex('-', hl7.range) - 1) as {{ dbt.type_string() }}) as source_reference_range_low
-, cast(substring(hl7.range, charindex('-', hl7.range) + 1, len(hl7.range)) as {{ dbt.type_string() }}) as source_reference_range_high
+, cast(
+    nullif(split_part(hl7.range, '-', 1), '')
+  as {{ dbt.type_string() }}) as source_reference_range_low
+, cast(
+    nullif(split_part(hl7.range, '-', 2), '')
+  as {{ dbt.type_string() }}) as source_reference_range_high
 , cast(null as {{ dbt.type_string() }}) as normalized_reference_range_low
 , cast(null as {{ dbt.type_string() }}) as normalized_reference_range_high
 , cast(null as {{ dbt.type_int() }}) as source_abnormal_flag
@@ -60,5 +52,3 @@ left join {{ ref('stg_ecw__labloinccodes') }} labloinc_order_hl7
   on labloinc_order_hl7.itemid = labdata.ItemId
 left join {{ ref('stg_ecw__labloinccodes') }} labloinc_comp_hl7
   on labloinc_comp_hl7.itemid = hl7.hl7itemid
-where
-  hl7.value != 'TNP';

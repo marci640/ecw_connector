@@ -12,10 +12,10 @@ select
   , reason
   , VisitType
   , deleteFlag
-  , enc.startTime
-  , enc.endTime
-  , enc.arrivedTime
-  , enc.depTime
+  , startTime
+  , endTime
+  , arrivedTime
+  , depTime
   , encLock
 from
     {{ source('ecw', 'enc') }}

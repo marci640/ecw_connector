@@ -1,0 +1,31 @@
+pid,doctorId,pmcId,maritalstatus,deceased,deceasedDate,language,GrId,hl7Id,race,PtStatus,ethnicity
+P001,D001,PH1001,,0,,,,,White,,2
+P002,D002,PH1002,,0,,,,,Black or African American,,2
+P003,D003,PH1003,,0,,,,,White,,2
+P004,D001,PH1004,,0,,,,,Black or African American,,2
+P005,D002,PH1005,,0,,,,,White,,2
+P006,D003,PH1006,,0,,,,,Black or African American,,2
+P007,D001,PH1007,,0,,,,,White,,2
+P008,D002,PH1008,,0,,,,,Black or African American,,2
+P009,D003,PH1009,,0,,,,,White,,2
+P010,D001,PH1010,,0,,,,,Black or African American,,2
+P011,D002,PH1011,,0,,,,,White,,2
+P012,D003,PH1012,,0,,,,,Black or African American,,2
+P013,D001,PH1013,,0,,,,,White,,2
+P014,D002,PH1014,,0,,,,,Black or African American,,2
+P015,D003,PH1015,,0,,,,,White,,2
+P016,D001,PH1016,,0,,,,,Black or African American,,2
+P017,D002,PH1017,,0,,,,,White,,2
+P018,D003,PH1018,,0,,,,,Black or African American,,2
+P019,D001,PH1019,,0,,,,,American Indian,,3
+P020,D002,PH1020,,0,,,,,American Indian,,3
+P021,D003,PH1021,,0,,,,,Asian,,3
+P022,D001,PH1022,,0,,,,,Asian,,3
+P023,D002,PH1023,,0,,,,,Unreported/Refused to Report,,3
+P024,D003,PH1024,,0,,,,,Unreported/Refused to Report,,3
+P025,D001,PH1025,,0,,,,,Native Hawaiian,,3
+P026,D002,PH1026,,0,,,,,Native Hawaiian,,3
+P027,D003,PH1027,,0,,,,,Hispanic,,3
+P028,D001,PH1028,,0,,,,,Hispanic,,3
+P029,D002,PH1029,,0,,,,,Other Race,,1
+P030,D003,PH1030,,0,,,,,Other Race,,4
