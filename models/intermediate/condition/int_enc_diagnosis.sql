@@ -1,5 +1,5 @@
 select
-      cast(null as {{ dbt.type_string() }}) as condition_id
+      cast(concat(enc.date, '-', itemdetail.value) as {{ dbt.type_string() }}) as condition_id
     , cast(enc.patientId as {{ dbt.type_string() }}) as person_id
     , cast(enc.patientId as {{ dbt.type_string() }}) as patient_id
     , cast(enc.encounterId as {{ dbt.type_string() }}) as encounter_id

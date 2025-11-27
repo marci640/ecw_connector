@@ -417,6 +417,9 @@ sources:
           - name: sex
             description: Sex/gender at birth
             data_type: string
+          - name: suffix
+            description: Name suffix (e.g., Jr., Sr., III)
+            data_type: string
           - name: uemail
             description: User email address
             data_type: string

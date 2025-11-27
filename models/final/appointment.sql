@@ -9,10 +9,11 @@ select
     , cast(null as {{ dbt.type_string() }}) as normalized_appointment_type_description
     , cast(enc.startTime as {{ dbt.type_timestamp() }}) as start_datetime
     , cast(enc.endTime as {{ dbt.type_timestamp() }}) as end_datetime
-    , datediff(minute,
-        cast(enc.startTime as {{ dbt.type_timestamp() }}),
-        cast(enc.endTime as {{ dbt.type_timestamp() }})
-      ) as duration
+    , {{ dbt.datediff(
+        "cast(enc.startTime as " ~ dbt.type_timestamp() ~ ")", 
+        "cast(enc.endTime as " ~ dbt.type_timestamp() ~ ")", 
+        "minute"
+        ) }} as duration
     , cast(enc.facilityId as {{ dbt.type_string() }}) as location_id
     , cast(enc.resourceID as {{ dbt.type_string() }}) as practitioner_id
     , cast(

@@ -13,12 +13,16 @@ with base as (
 )
 
 select
-    dob
+    county
+  , dob
   , sex
+  , suffix
   , uemail
   , ufname
   , uid
   , ulname
+  , uname
+  , uminitial
   , umobileno
   , upaddress
   , upaddress2
