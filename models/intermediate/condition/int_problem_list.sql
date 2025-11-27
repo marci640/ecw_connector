@@ -1,5 +1,5 @@
 select
-      cast(concat(problemlist.AddedDate, '-', itemdetail.value) as {{ dbt.type_string() }}) as condition_id
+      cast(concat(problemlist.patientId, '-', problemlist.AddedDate, '-', itemdetail.value) as {{ dbt.type_string() }}) as condition_id
     , cast(problemlist.patientId as {{ dbt.type_string() }}) as person_id
     , cast(problemlist.patientId as {{ dbt.type_string() }}) as patient_id
     , cast(problemlist.encounterId as {{ dbt.type_string() }}) as encounter_id
