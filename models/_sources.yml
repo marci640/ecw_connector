@@ -6,6 +6,48 @@ sources:
     schema: main
     tables:
 
+      - name: billingdata
+        columns:
+          - name: Id
+            description: Primary key of the billingdata table
+            data_type: string
+          - name: EncounterId
+            description: Encounter identifier from the source billingdata table
+            data_type: string
+          - name: icdcode1
+            description: ICD code 1 associated with the billing item
+            data_type: string
+          - name: icdcode2
+            description: ICD code 2 associated with the billing item
+            data_type: string
+          - name: icdcode3
+            description: ICD code 3 associated with the billing item
+            data_type: string
+          - name: icdcode4
+            description: ICD code 4 associated with the billing item
+            data_type: string
+          - name: itemID
+            description: Item identifier (links to itemdetail table)
+            data_type: string
+          - name: Mod1
+            description: Modifier 1 for the billing item
+            data_type: string
+          - name: Mod2
+            description: Modifier 2 for the billing item
+            data_type: string
+          - name: Mod3
+            description: Modifier 3 for the billing item
+            data_type: string
+          - name: Mod4
+            description: Modifier 4 for the billing item
+            data_type: string
+          - name: displayIndex
+            description: Display ordering index for billing items
+            data_type: integer
+          - name: deleteFlag
+            description: Delete flag (0 = not deleted)
+            data_type: integer
+
       - name: diagnosis
         columns:
           - name: EncounterId
