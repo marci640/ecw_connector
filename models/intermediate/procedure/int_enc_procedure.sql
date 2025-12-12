@@ -5,9 +5,9 @@ select
     , cast(enc.encounterId as {{ dbt.type_string() }}) as encounter_id
     , cast(enc.invoiceId as {{ dbt.type_string() }}) as claim_id
     , cast(enc.date as date) as procedure_date
-    , cast('hcpcs' as {{ dbt.type_string() }}) as source_code_type,
-    , cast(itemdetail.value as {{ dbt.type_string() }}) as source_code,
-    , cast(items.itemName as {{ dbt.type_string() }}) as source_description,
+    , cast('hcpcs' as {{ dbt.type_string() }}) as source_code_type
+    , cast(itemdetail.value as {{ dbt.type_string() }}) as source_code
+    , cast(items.itemName as {{ dbt.type_string() }}) as source_description
     , cast(null as {{ dbt.type_string() }}) as normalized_code_type
     , cast(null as {{ dbt.type_string() }}) as normalized_code
     , cast(null as {{ dbt.type_string() }}) as normalized_description
