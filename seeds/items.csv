@@ -9,3 +9,11 @@ itemId,keyName,itemName
 1005,HT,Height
 1006,WT,Weight
 1007,BMI,Body Mass Index
+21001,CPTCodes,Psychiatric diagnostic evaluation
+21002,CPTCodes,Psychiatric diagnostic evaluation with medical services
+21003,CPTCodes,Psychotherapy 30 minutes
+21004,CPTCodes,Psychotherapy 45 minutes
+21005,CPTCodes,Psychotherapy 60 minutes
+21006,CPTCodes,Office outpatient visit new patient level 1
+21007,CPTCodes,Office outpatient visit new patient level 2
+21008,CPTCodes,Office outpatient visit new patient level 3
