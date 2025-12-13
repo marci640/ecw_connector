@@ -233,6 +233,48 @@ sources:
             description: Source codetype as string ('9' or '10')
             data_type: string
 
+      - name: immunizations
+        columns:
+          - name: patientId
+            description: Patient identifier
+            data_type: string
+          - name: ImmunizationId
+            description: Immunization record identifier
+            data_type: string
+          - name: vaccinename
+            description: Vaccine name
+            data_type: string
+          - name: lotNumber
+            description: Vaccine lot number
+            data_type: string
+          - name: immstatus
+            description: Immunization status
+            data_type: string
+          - name: DoseNumber
+            description: Dose number
+            data_type: integer
+          - name: givenDate
+            description: Date vaccine was given
+            data_type: date
+          - name: givenBy
+            description: Provider who administered vaccine
+            data_type: string
+          - name: location
+            description: Location where vaccine was given
+            data_type: string
+          - name: cvx_code
+            description: CVX code for vaccine
+            data_type: string
+          - name: vfc_code
+            description: VFC code
+            data_type: string
+          - name: encounterid
+            description: Associated encounter identifier
+            data_type: string
+          - name: deleteFlag
+            description: Delete flag (0 = active)
+            data_type: integer
+
       - name: itemdetail
         columns:
           - name: itemID
@@ -679,3 +721,23 @@ sources:
             data_type: string
             max_len: 30
             nullable: false
+
+      - name: immunizationstatus
+        columns:
+          - name: Id
+            data_type: string
+          - name: ImmStatusId
+            data_type: string
+          - name: CODE
+            data_type: string
+          - name: Description
+            data_type: string
+          - name: TYPE
+            data_type: string
+
+      - name: vaccines_sites
+        columns:
+          - name: Code
+            data_type: string
+          - name: Location
+            data_type: string

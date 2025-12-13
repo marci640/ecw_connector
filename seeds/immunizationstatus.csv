@@ -1,0 +1,4 @@
+Id,ImmStatusId,CODE,Description,TYPE
+1,1,ADM,Administered,action
+2,2,REF,Refused,action
+3,3,PD,Pending,action
